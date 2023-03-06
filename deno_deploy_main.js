@@ -44,14 +44,16 @@ let f_a_n_nor_from_s_hex = function(s_hex){
     var s_hexa = a_s.pop();
     var a_n_nor = []
     var s_hex_u8 = ''; 
+    console.log(s_hexa)
     // debugger
     for(var n = 0; n < s_hexa.length; n+=1){
-        if(((n+1)%2)== 0){
+        s_hex_u8+=s_hexa[n];
+        if(((n+1)%2) == 0){
+            console.log(s_hex_u8)
             let n_u8 = parseInt(\`0x\${s_hex_u8}\`);
             a_n_nor.push(n_u8/255);
             s_hex_u8 = '';
         }
-        s_hex_u8+=s_hexa[n];
     }
     
     return a_n_nor;
@@ -113,9 +115,9 @@ var o_input_text_hex = {
             onkeyup: function(){
                 s_hex = this.value;
                 a_n_nor = f_a_n_nor_from_s_hex(s_hex);
-                
+                console.log(a_n_nor)
                 o_input_color._f_render();
-                o_input_text_hex._f_render();
+                o_input_text_vec3._f_render();
 
             }
         }
