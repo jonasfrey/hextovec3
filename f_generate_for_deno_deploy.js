@@ -16,7 +16,7 @@ import { serve } from "https://deno.land/std@0.155.0/http/server.ts";
 var s_html = \`${s_html_full}\`
 
 serve(
-    function(req: Request){
+    function(req){
         return new Response(
             s_html, 
             {
