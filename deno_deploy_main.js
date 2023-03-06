@@ -146,7 +146,7 @@ var o = {
                 {
                     id: "test_div",
                     s_tag : "h1", 
-                    innerText: "hextovec3"
+                    innerText: "Hex to Vec3"
                 },
 
                 o_input_color, 
