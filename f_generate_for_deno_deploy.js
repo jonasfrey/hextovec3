@@ -7,7 +7,7 @@ var s_js = await Deno.readTextFile(s_path_file_js)
 
 var s_html_full = s_html.replace(`<script type='module' src="./client.module.js" async defer></script>`, s_js);
 s_html_full = s_html_full.replaceAll('`', '\\`');
-s_html_full = s_html_full.replaceAll('${', '\${`');
+s_html_full = s_html_full.replaceAll('${', '\\${');
 var s_js_webserver = `
 import { serve } from "https://deno.land/std@0.155.0/http/server.ts";
 
