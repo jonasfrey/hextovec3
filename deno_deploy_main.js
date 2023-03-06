@@ -30,7 +30,7 @@ var s_html = `<!DOCTYPE html>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div id="main"></div>
-        import {f_o_html_from_o_js} from "https://deno.land/x/f_o_html_from_o_js@0.6/mod.js";
+        <script type='module'>import {f_o_html_from_o_js} from "https://deno.land/x/f_o_html_from_o_js@0.6/mod.js";
 
 let n_count = 5;
 
@@ -171,12 +171,12 @@ let f_s_from_n_force_decimal_point = function(
 var o_html = f_o_html_from_o_js(o);
 
 var o_div_main = document.querySelector("#main");
-o_div_main.appendChild(o_html)
+o_div_main.appendChild(o_html)</script>
     </body>
 </html>`
 
 serve(
-    function(req){
+    function(req: Request){
         return new Response(
             s_html, 
             {
