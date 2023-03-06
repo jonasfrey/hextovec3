@@ -176,7 +176,7 @@ o_div_main.appendChild(o_html)
 </html>`
 
 serve(
-    function(req: Request){
+    function(req){
         return new Response(
             s_html, 
             {
