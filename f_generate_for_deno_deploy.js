@@ -5,7 +5,9 @@ var s_path_file_html = `./localhost/index.html`
 var s_html = await Deno.readTextFile(s_path_file_html)
 var s_js = await Deno.readTextFile(s_path_file_js)
 
-var s_html_full = s_html.replace(`<script type='module' src="./client.module.js" async defer></script>`, s_js);
+var s_html_full = s_html.replace(`<script type='module' src="./client.module.js" async defer></script>`, 
+`<script type='module'>${s_js}</script>`
+);
 s_html_full = s_html_full.replaceAll('`', '\\`');
 s_html_full = s_html_full.replaceAll('${', '\\${');
 var s_js_webserver = `
